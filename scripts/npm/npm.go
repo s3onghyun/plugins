@@ -20,7 +20,7 @@ import (
 )
 
 func MustGetWorkspaces(dirPath string) []string {
-	excludedWorkspaces := []string{"e2e"}
+	excludedWorkspaces := []string{"e2e", "traceheatmapchart"}
 	workspaces := npm.MustGetWorkspaces(dirPath)
 	return slices.DeleteFunc(workspaces, func(w string) bool {
 		return slices.Contains(excludedWorkspaces, w)
